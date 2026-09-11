@@ -1,0 +1,41 @@
+name: Update Combined Coding Stats
+
+on:
+  schedule:
+    # Runs once a day at 03:00 UTC — adjust as you like
+    - cron: "0 3 * * *"
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch stats and regenerate badge
+        env:
+          LEETCODE_USERNAME: lukk_y
+          CODEFORCES_HANDLE: lukkydiwan
+          CODECHEF_USERNAME: lukkydiwan1
+        run: node scripts/fetch-stats.js
+
+      - name: Commit updated badge if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/combined-stats.svg
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: refresh combined coding stats badge"
+          git push
