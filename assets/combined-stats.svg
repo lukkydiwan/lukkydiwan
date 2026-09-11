@@ -1,0 +1,22 @@
+<svg width="720" height="120" viewBox="0 0 720 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; }
+    .big-number { font: 700 34px 'Segoe UI', Ubuntu, Sans-Serif; fill: #f0f6fc; }
+    .big-label { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #8b949e; }
+    .plat-label { font: 600 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
+    .plat-value { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #8b949e; }
+    .divider { stroke: #30363d; stroke-width: 1; }
+  </style>
+  <rect x="0.5" y="0.5" width="719" height="119" rx="8" class="bg"/>
+
+  <text x="35" y="48" class="big-number">778</text>
+  <text x="35" y="68" class="big-label">Total Problems Solved</text>
+
+  <text x="220" y="48" class="big-number">100</text>
+  <text x="220" y="68" class="big-label">Total Contests</text>
+
+  <line x1="350" y1="18" x2="350" y2="102" class="divider"/>
+  <text x="380" y="46" class="plat-label">LeetCode</text><text x="690" y="46" class="plat-value" text-anchor="end">492 solved</text>
+  <text x="380" y="70" class="plat-label">Codeforces</text><text x="690" y="70" class="plat-value" text-anchor="end">173 solved</text>
+  <text x="380" y="94" class="plat-label">CodeChef</text><text x="690" y="94" class="plat-value" text-anchor="end">113 solved</text>
+</svg>
