@@ -103,39 +103,43 @@ async function getCodeChefStats(username) {
 }
 
 // ---- SVG card rendering ---------------------------------------------------
+// One compact row: big "Overall" totals on the left, a divider, then a
+// single "Platform: N solved" line per source on the right. No activity
+// feeds, no difficulty bars — just the numbers.
 function renderSvg({ totalSolved, totalContests, breakdown }) {
-  const rows = breakdown
+  const width = 720;
+  const height = 120;
+  const dividerX = 350;
+
+  const rowGap = 24;
+  const rowsStartY = 46;
+  const rightRows = breakdown
     .map(
       (b, i) =>
-        `<text x="30" y="${100 + i * 26}" class="stat-label">${b.label}</text>` +
-        `<text x="440" y="${100 + i * 26}" class="stat-value" text-anchor="end">${b.solved} solved · ${b.contests} contests</text>`
+        `<text x="${dividerX + 30}" y="${rowsStartY + i * rowGap}" class="plat-label">${b.label}</text>` +
+        `<text x="${width - 30}" y="${rowsStartY + i * rowGap}" class="plat-value" text-anchor="end">${b.solved} solved</text>`
     )
-    .join("\n");
+    .join("\n  ");
 
-  return `<svg width="480" height="${100 + breakdown.length * 26 + 20}" viewBox="0 0 480 ${
-    100 + breakdown.length * 26 + 20
-  }" xmlns="http://www.w3.org/2000/svg">
+  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; rx: 8; }
-    .title { font: 600 16px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff; }
-    .big-number { font: 700 30px 'Segoe UI', Ubuntu, Sans-Serif; fill: #f0f6fc; }
+    .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; }
+    .big-number { font: 700 34px 'Segoe UI', Ubuntu, Sans-Serif; fill: #f0f6fc; }
     .big-label { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #8b949e; }
-    .stat-label { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
-    .stat-value { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #8b949e; }
+    .plat-label { font: 600 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
+    .plat-value { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #8b949e; }
     .divider { stroke: #30363d; stroke-width: 1; }
   </style>
-  <rect x="0.5" y="0.5" width="479" height="${
-    100 + breakdown.length * 26 + 20 - 1
-  }" class="bg"/>
-  <text x="30" y="35" class="title">Competitive Programming — Overall Stats</text>
+  <rect x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="8" class="bg"/>
 
-  <text x="30" y="70" class="big-number">${totalSolved}</text>
-  <text x="120" y="70" class="big-label">Total Problems Solved</text>
-  <text x="270" y="70" class="big-number">${totalContests}</text>
-  <text x="330" y="70" class="big-label">Total Contests</text>
+  <text x="35" y="48" class="big-number">${totalSolved}</text>
+  <text x="35" y="68" class="big-label">Total Problems Solved</text>
 
-  <line x1="30" y1="82" x2="450" y2="82" class="divider"/>
-  ${rows}
+  <text x="220" y="48" class="big-number">${totalContests}</text>
+  <text x="220" y="68" class="big-label">Total Contests</text>
+
+  <line x1="${dividerX}" y1="18" x2="${dividerX}" y2="${height - 18}" class="divider"/>
+  ${rightRows}
 </svg>`;
 }
 
