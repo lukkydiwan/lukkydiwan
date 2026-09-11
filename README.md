@@ -3,6 +3,21 @@
 **CS Student** · IIIT MANIPUR · B.Tech 2027 · GURUGRAM, INDIA
 Open to ML/AI internship opportunities.
 
+
+### 🏆 Competitive Programming
+
+**Overall stats** (auto-updated daily by a GitHub Action — see `scripts/fetch-stats.js`):
+
+![Combined Coding Stats](./assets/combined-stats.svg)
+
+**Per-platform breakdown:**
+
+[![LeetCode Stats](https://leetcard.jacoblin.cool/lukk_y?theme=dark&font=Nunito&ext=activity)](https://leetcode.com/u/lukk_y/)
+
+[![Codeforces Stats](https://codeforces-readme-stats.vercel.app/api/card?username=lukkydiwan)](https://codeforces.com/profile/lukkydiwan)
+
+[![CodeChef Stats](https://codechef-readme-stats.onrender.com/lukkydiwan1?v=1)](https://www.codechef.com/users/lukkydiwan1)
+
 ---
 
 ### 🔭 What I'm building
