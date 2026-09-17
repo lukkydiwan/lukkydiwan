@@ -9,14 +9,14 @@
   </style>
   <rect x="0.5" y="0.5" width="719" height="119" rx="8" class="bg"/>
 
-  <text x="35" y="48" class="big-number">845</text>
+  <text x="35" y="48" class="big-number">850</text>
   <text x="35" y="68" class="big-label">Total Problems Solved</text>
 
-  <text x="220" y="48" class="big-number">102</text>
+  <text x="220" y="48" class="big-number">103</text>
   <text x="220" y="68" class="big-label">Total Contests</text>
 
   <line x1="350" y1="18" x2="350" y2="102" class="divider"/>
-  <text x="380" y="46" class="plat-label">LeetCode</text><text x="690" y="46" class="plat-value" text-anchor="end">500 solved</text>
+  <text x="380" y="46" class="plat-label">LeetCode</text><text x="690" y="46" class="plat-value" text-anchor="end">501 solved</text>
   <text x="380" y="70" class="plat-label">Codeforces</text><text x="690" y="70" class="plat-value" text-anchor="end">177 solved</text>
-  <text x="380" y="94" class="plat-label">CodeChef</text><text x="690" y="94" class="plat-value" text-anchor="end">168 solved</text>
+  <text x="380" y="94" class="plat-label">CodeChef</text><text x="690" y="94" class="plat-value" text-anchor="end">172 solved</text>
 </svg>
