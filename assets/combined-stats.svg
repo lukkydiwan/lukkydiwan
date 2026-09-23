@@ -12,7 +12,7 @@
   <text x="35" y="48" class="big-number">894</text>
   <text x="35" y="68" class="big-label">Total Problems Solved</text>
 
-  <text x="220" y="48" class="big-number">103</text>
+  <text x="220" y="48" class="big-number">104</text>
   <text x="220" y="68" class="big-label">Total Contests</text>
 
   <line x1="350" y1="18" x2="350" y2="102" class="divider"/>
