@@ -10,11 +10,6 @@ _Auto-updated daily by a GitHub Action — see `scripts/fetch-stats.js`_
 [![Coding Stats](./assets/combined-stats.svg)](https://github.com/lukkydiwan/lukkydiwan/actions/workflows/update-stats.yml)
 ---
 
-### 🔭 What I'm building
-- **Car Price Predictor** — ML pipeline with EDA, feature engineering & multi-model benchmarking (R² 0.92)
-- **VisionCrawler** — Screenshot-based web scraper using OpenCV + Pytesseract (computer vision)
-- **ROSE_and_PETAL** — Full-stack e-commerce app with product gallery, modals & live demo
-- **SAKSHAM** — Full-stack TypeScript app (React frontend + Node.js backend)
 
 ---
 
